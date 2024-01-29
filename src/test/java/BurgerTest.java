@@ -85,14 +85,13 @@ public class BurgerTest {
         Mockito.when(dinosaur.getType()).thenReturn(FILLING);
         burger.addIngredient(dinosaur);
 
-        String lineSeparator = System.lineSeparator();
-        String expected = String.format("(==== black bun ====)" + lineSeparator +
-                "= sauce chili sauce =" + lineSeparator +
-                "= filling cutlet =" + lineSeparator +
-                "(==== black bun ====)" + lineSeparator +
-                lineSeparator +
-                "Price: 700,00" +
-                lineSeparator);
+        String expected = String.format("(==== black bun ====)%n" +
+                "= sauce chili sauce =%n" +
+                "= filling cutlet =%n" +
+                "(==== black bun ====)%n" +
+                "%n" +
+                "Price: 700,000000" +
+                "%n");
         String actual = burger.getReceipt();
         assertEquals(expected, actual);
     }

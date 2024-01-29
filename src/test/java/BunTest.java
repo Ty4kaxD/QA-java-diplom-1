@@ -21,14 +21,17 @@ public class BunTest {
     public static Object[][] getTestData() {
         return new Object[][]{
                 {"bun", 123f},
-                {"BLACK bun", 222f},
+                {"BLACK BUN", 222f},
                 {null, 1f},
                 {"asdfg", Float.NaN},
                 {"bu n", 100.0f},
-                {"hot_bun", 200.999f},
+                {"hot_bun", 200.9999999f},
                 {"*bun-", -123f},
-                {"white bun", 0f},
-                {"", 222f}
+                {"~!@#$%^&*(()_+}{|][/.,.", 0f},
+                {"", 222f},
+                {"булка", 111f},
+                {"qweqwe1eqweqweqdasd1321ewqeqwe213eqwdfdr", Float.MAX_VALUE},
+                {"qweqwe1eqweqweqdasd1321ewqeqwe213eqwdfdrgtfhygthjurteryghrthghfghfghfghfdewfdfsdgfdsgdfgdfgdfgdfgdfgdfgdfsgdsfg", Float.MIN_VALUE}
 
         };
 
@@ -47,7 +50,7 @@ public class BunTest {
 
     @Test
     public void checkGetValidPrice() {
-        assertEquals("Ошибка цены", price, bun.getPrice(), 0.0);
+        assertEquals("Ошибка цены", price, bun.getPrice(), 0.0f);
     }
 }
 
